@@ -10,3 +10,4 @@ python-dotenv
 markdown
 python-docx
 groq
+agents
