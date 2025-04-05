@@ -9,4 +9,4 @@ firecrawl-py
 python-dotenv
 markdown
 python-docx
-
+groq
