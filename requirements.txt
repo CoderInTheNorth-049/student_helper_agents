@@ -1,0 +1,12 @@
+streamlit
+duckduckgo-search
+typing-extensions
+agno
+google-search-results
+arxiv
+firecrawl
+firecrawl-py
+python-dotenv
+markdown
+python-docx
+
