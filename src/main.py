@@ -1,4 +1,5 @@
 import streamlit as st
+import asyncio
 from config.settings import initialize_session_state
 from learning_path.advisor import get_learning_path
 from learning_path.librarian import get_learning_resources
@@ -205,4 +206,4 @@ async def main():
             st.info("Please check your API keys and try again.")
 
 if __name__ == "__main__":
-    main() 
+    asyncio.run(main()) 
