@@ -1,7 +1,7 @@
 from agents import Agent, Runner
 from agents import set_default_openai_key
 
-def generate_conclusion(research_info: str, openai_api_key: str) -> str:
+async def generate_conclusion(research_info: str, openai_api_key: str) -> str:
     """
     Generate the conclusion section for the research paper.
     
@@ -24,5 +24,5 @@ def generate_conclusion(research_info: str, openai_api_key: str) -> str:
         """
     )
     
-    response = Runner.run(conclusion_agent, research_info)
+    response = await Runner.run(conclusion_agent, research_info)
     return response.final_output 

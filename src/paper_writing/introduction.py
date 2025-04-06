@@ -1,7 +1,7 @@
 from agents import Agent, Runner
 from agents import set_default_openai_key
 
-def generate_introduction(research_info: str, openai_api_key: str) -> str:
+async def generate_introduction(research_info: str, openai_api_key: str) -> str:
     """
     Generate an introduction for the research paper.
     
@@ -26,5 +26,5 @@ def generate_introduction(research_info: str, openai_api_key: str) -> str:
         """
     )
     
-    response = Runner.run(introduction_agent, research_info)
+    response = await Runner.run(introduction_agent, research_info)
     return response.final_output 

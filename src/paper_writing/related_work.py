@@ -42,7 +42,7 @@ async def deep_research(query: str, max_depth: int, time_limit: int, max_urls: i
     except Exception as e:
         return {"error": str(e), "success": False}
 
-def generate_related_work(research_info: str, openai_api_key: str, firecrawl_api_key: str) -> str:
+async def generate_related_work(research_info: str, openai_api_key: str, firecrawl_api_key: str) -> str:
     """
     Generate the related work section for the research paper.
     
@@ -80,5 +80,5 @@ def generate_related_work(research_info: str, openai_api_key: str, firecrawl_api
         tools=[deep_research]
     )
     
-    response = Runner.run(related_work_agent, research_info)
+    response = await Runner.run(related_work_agent, research_info)
     return response.final_output 
