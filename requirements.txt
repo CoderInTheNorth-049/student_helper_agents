@@ -10,4 +10,4 @@ python-dotenv
 markdown
 python-docx
 groq
-agents
+openai-agents
