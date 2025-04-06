@@ -63,7 +63,7 @@ def add_download_buttons(content: str, filename: str):
             mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
 
-def main():
+async def main():
     # Initialize session state
     initialize_session_state()
     
@@ -144,31 +144,31 @@ def main():
             else:  # Craft Research Paper
                 with st.spinner("Generating Research Paper..."):
                     # Generate each section
-                    abstract = clean_llm_output(generate_abstract(user_input, openai_key))
+                    abstract = clean_llm_output(await generate_abstract(user_input, openai_key))
                     st.markdown("### Abstract")
                     st.markdown(abstract)
                     
-                    introduction = clean_llm_output(generate_introduction(user_input, openai_key))
+                    introduction = clean_llm_output(await generate_introduction(user_input, openai_key))
                     st.markdown("### Introduction")
                     st.markdown(introduction)
                     
-                    related_work = clean_llm_output(generate_related_work(user_input, openai_key, firecrawl_key))
+                    related_work = clean_llm_output(await generate_related_work(user_input, openai_key, firecrawl_key))
                     st.markdown("### Related Work")
                     st.markdown(related_work)
                     
-                    methodology = clean_llm_output(generate_methodology(user_input, openai_key))
+                    methodology = clean_llm_output(await generate_methodology(user_input, openai_key))
                     st.markdown("### Methodology")
                     st.markdown(methodology)
                     
-                    implementation = clean_llm_output(generate_implementation(user_input, openai_key))
+                    implementation = clean_llm_output(await generate_implementation(user_input, openai_key))
                     st.markdown("### Implementation & Evaluation")
                     st.markdown(implementation)
                     
-                    conclusion = clean_llm_output(generate_conclusion(user_input, openai_key))
+                    conclusion = clean_llm_output(await generate_conclusion(user_input, openai_key))
                     st.markdown("### Conclusion")
                     st.markdown(conclusion)
                     
-                    references = clean_llm_output(generate_references(user_input, openai_key))
+                    references = clean_llm_output(await generate_references(user_input, openai_key))
                     st.markdown("### References")
                     st.markdown(references)
                     
